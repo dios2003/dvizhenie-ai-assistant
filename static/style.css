@@ -1,0 +1,1509 @@
+  *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+        html, body {
+            overflow-x: hidden; /* ДОБАВЛЕНО: предотвращаем горизонтальный скролл на уровне документа */
+            width: 100%;
+            max-width: 100%;
+        } 
+
+        body {
+            background-color: #f5f5f5;
+            padding: 0;
+            position: relative;
+            padding-top: 120px; /* Добавляем отступ для фиксированной шапки */
+        }
+        
+        /* Стили для прямоугольника с фоновым изображением */
+        .rectangle-2 {
+            width: 100%;
+            height: 100vh; /* Изменяем на 100% высоты viewport */
+            min-height: 774px; /* Минимальная высота как было */
+            background: linear-gradient(0deg, rgba(0, 0, 0, 0.33), rgba(0, 0, 0, 0.33)), url("/static/images/Rectangle3.png");
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            z-index: -1;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 0 11.11%;
+        }
+        
+        /* Стили для блока rectangle-7 */
+        .rectangle-7 {
+            width: 100%;
+            background: #0D256F;
+            position: relative;
+            padding: 80px 0;
+            min-height: 800px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        /* Новый блок с нашими ценностями */
+        .values-section {
+            width: 100%;
+            background: #FFFFFF;
+            position: relative;
+            padding: 60px 0; /* Уменьшено с 100px */
+            min-height: 600px; /* Уменьшено с 800px */
+            line-height: 1.3; /* Уменьшено с 1.4 */
+        }
+        
+        .values-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            height: 100%;
+            padding: 0 20px;
+        }
+        
+        .values-title {
+            font-family: 'Inter', sans-serif;
+            font-weight: 700;
+            font-style: bold;
+            font-size: 42px;
+            line-height: 100%;
+            letter-spacing: 0%;
+            text-transform: uppercase;
+            color: #202020;
+            text-align: center;
+            width: 100%;
+            margin-bottom: 50px; /* Уменьшено с 80px */
+        }
+        
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px 30px; /* Уменьшено с 60px 40px */
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .value-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        
+        .value-image {
+            width: 80px; /* Уменьшено с 96px */
+            height: 80px; /* Уменьшено с 96px */
+            margin-bottom: 15px; /* Уменьшено с 25px */
+            flex-shrink: 0;
+        }
+        
+        .value-content {
+            flex: 1;
+            max-width: 450px; /* Ограничиваем ширину контента */
+        }
+        
+        .value-subtitle {
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            font-size: 20px;
+            line-height: 1.3;
+            color: #0D256F;
+            margin-bottom: 8px; /* Уменьшено с 15px */
+        }
+        
+        .value-description {
+            font-family: 'Inter', sans-serif;
+            font-weight: 400;
+            font-style: regular;
+            font-size: 16px;
+            line-height: 1.4; /* Уменьшено с 1.5 */
+            letter-spacing: 0%;
+            color: #202020;
+            margin-top: 4px;
+        }
+        
+        /* Специальные стили для пятого элемента (клиентоориентированность) */
+        .values-grid .value-item:nth-child(5) {
+            grid-column: 1 / -1; /* Занимает обе колонки */
+            display: flex;
+            justify-content: center;
+            margin: 0 auto;
+            max-width: 500px; /* Ширина ограничена */
+        }
+        
+        .values-grid .value-item:nth-child(5) .value-image {
+            margin-bottom: 15px;
+        }
+        
+        .values-grid .value-item:nth-child(5) .value-subtitle {
+            margin-bottom: 10px;
+        }
+        
+        .values-grid .value-item:nth-child(5) .value-description {
+            font-size: 18px; /* Немного увеличен шрифт для акцента */
+            font-weight: 500;
+        }
+        
+        .mission-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center; /* Добавляем центрирование по вертикали */
+            max-width: 1400px;
+            width: 100%;
+            padding: 20px 30px;
+            margin: 0 auto; /* Убираем верхний/нижний margin */
+            height: 100%; /* Занимаем всю высоту родителя */
+        }
+        
+        .mission-title {
+            font-family: 'Inter', sans-serif;
+            font-style: normal;
+            font-weight: 700;
+            font-size: 32px;
+            line-height: 1;
+            text-transform: uppercase;
+            text-align: center;
+            color: #FFFFFF;
+            margin-bottom: 30px;
+        }
+        
+        .mission-text {
+            font-family: 'Inter', sans-serif;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 20px;
+            line-height: 1.35;
+            text-align: center;
+            color: #FFFFFF;
+            max-width: 764px;
+            margin-bottom: 50px;
+            padding: 0 20px;
+        }
+        
+        .mission-logo {
+            width: 600px;
+            height: 600px;
+            background: #0D256F;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 0; /* Убираем отрицательный margin */
+            position: relative;
+            border-radius: 10px;
+            padding: 10px;
+        }
+        
+        .mission-logo img {
+            max-width: 110%;
+            max-height: 110%;
+            object-fit: cover;
+            transform: scale(1.4)
+        }
+        
+        /* Контейнер для текста поверх логотипа */
+        .logo-text-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center; /* Центрируем по вертикали */
+            align-items: center;
+            padding: 20px;
+            text-align: center;
+        }
+
+
+        .logo-title {
+            font-family: 'Inter', sans-serif;
+            font-style: normal;
+            font-weight: 700;
+            font-size: 50px;
+            line-height: 1.2;
+            text-transform: uppercase;
+            color: #FFFFFF;
+            margin-bottom: 100px; /* Добавляем отступ 100px снизу */
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        
+        /* Обновляем стили для logo-text-description */
+        .logo-text-description {
+            font-family: 'Inter', sans-serif;
+            font-style: normal;
+            font-weight: 400;
+            font-size: clamp(25px, 5vw, 26px);
+            line-height: 1.8;
+            letter-spacing: 0.3px;
+            color: #FFFFFF;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+            width: auto;
+            max-width: none; 
+            margin: 0;
+            padding: 0 20px;
+            text-align: center;
+            text-justify: inter-word;
+            hyphens: auto;
+        }
+        
+        /* Контейнер для текста в пределах логотипа */
+        .logo-text-container {
+            display: none; /* Скрываем старый контейнер */
+        }
+        
+        .logo-text-title {
+            font-family: 'Inter', sans-serif;
+            font-style: normal;
+            font-weight: 700;
+            font-size: 28px;
+            line-height: 1.2;
+            text-transform: uppercase;
+            color: #FFFFFF;
+            margin-bottom: 20px;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        
+        .logo-text-description {
+            font-family: 'Inter', sans-serif;
+            font-style: normal;
+            font-weight: 400;
+            font-size: clamp(17px, 4vw, 20px);
+            line-height: 1.7;
+            color: #FFFFFF;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+            width: 1000px; /* Фиксированная ширина 200px */
+            max-width: 1000px; /* Ограничиваем максимальную ширину */
+            margin: 0;
+            padding: 0 0; /* Убираем боковые отступы */
+            text-align: center;
+            text-justify: inter-word;
+            hyphens: auto;
+            word-wrap: break-word; /* Перенос длинных слов */
+        }
+ 
+        /* Тексты поверх фонового изображения */
+        .distributor-text {
+            font-family: 'Inter', sans-serif;
+            font-style: normal;
+            font-weight: 800;
+            font-size: 80px;
+            line-height: 1.2;
+            text-transform: uppercase;
+            margin-bottom: 100px; /* Добавлено расстояние 100px */
+        }
+        
+        .official-part {
+            color: #0F3AC0;
+            display: block;
+            margin-bottom: 10px;
+        }
+        
+        .distributor-part {
+            color: #FFFFFF;
+            display: block;
+        }
+        
+        .specialization-text {
+            font-family: 'Inter', sans-serif;
+            font-style: normal;
+            font-weight: 500;
+            font-size: 28px;
+            line-height: 1.2;
+            color: #FFFFFF;
+            max-width: 842px;
+        }
+
+        .specialization-part1 {
+            display: block;
+            white-space: nowrap;
+            font-size: 36px;
+            color: #FFFFFF;
+            margin-bottom: 8px;
+        }
+
+
+        /* Вторая часть текста */
+        .specialization-part2 {
+            display: block;
+            font-size: 36px;
+            color: #FFFFFF;
+        }
+        
+        .header {
+            width: 100%;
+            height: 120px;
+            background-color: #0D256F;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 40px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            position: fixed; /* Делаем шапку фиксированной */
+            top: 0; /* Прижимаем к верхнему краю */
+            left: 0;
+            z-index: 1000; /* Увеличиваем z-index для уверенности */
+        }
+        
+        .logo-container {
+            display: flex;
+            align-items: center;
+            height: 100%;
+            max-height: 120px;
+        }
+        
+        /* Стили для логотипа PNG */
+        .logo-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            max-height: 120px;
+            padding: 20px 0;
+            transition: opacity 0.3s ease;
+            text-decoration: none;
+        }
+        
+        .logo-link:hover {
+            opacity: 0.9;
+        }
+        
+        .logo-img {
+            height: 100%;
+            max-height: 100px;
+            width: auto;
+            max-width: none;
+            object-fit: contain;
+        }
+        
+        .nav-menu {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-item {
+            margin: 0 20px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .nav-icon {
+            width: 18px;
+            height: 18px;
+            margin-right: 8px;
+            fill: white;
+        }
+        
+        .nav-link {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: 500;
+            transition: color 0.3s;
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+        
+        .nav-link:hover {
+            color: #aab6e6;
+        }
+        
+        .nav-link:hover .nav-icon {
+            fill: #aab6e6;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: white;
+            transition: width 0.3s;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        .login-btn {
+            background-color: white;
+            color: #0D256F;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 20px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            font-size: 18px;
+        }
+        
+        .login-btn:hover {
+            background-color: #aab6e6;
+            transform: translateY(-2px);
+        }
+        
+        .btn-icon {
+            width: 20px;
+            height: 20px;
+            margin-right: 8px;
+            fill: #0D256F;
+        }
+        
+        .login-btn:hover .btn-icon {
+            fill: #0D256F;
+        }
+        
+        /* Блок "Филиалы" - на всю ширину экрана без фона */
+        .branches-section {
+            width: 100%;
+            background: transparent;
+            padding: 0;
+            position: relative;
+            margin: 0;
+            left: 0;
+            right: 0;
+        }
+        
+        .branches-container {
+            width: 100%;
+            max-width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            margin: 0 auto;
+        }
+        
+        .branches-info {
+            flex: 1;
+            min-width: 300px;
+            max-width: 50%;
+            padding: 15px 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            background: rgba(255, 255, 255, 0.9);
+            box-sizing: border-box; 
+        }
+        
+        .branch-item {
+            padding: 0 20px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center; /* Центрируем весь блок по горизонтали */
+            min-height: 80px;
+        }
+        
+        .branch-content {
+            width: 100%;
+            max-width: 280px; /* Ограничиваем ширину контента */
+            text-align: left; /* Текст внутри выравниваем по левому краю */
+        }
+        
+        /* Расстояние 20px между Екатеринбургом и Челябинском */
+        .branch-item:first-child {
+            margin-bottom: 20px;
+        }
+        
+        /* Расстояние 20px между Челябинском и ХМАО-ЮГРА */
+        .branch-item:nth-child(2) {
+            margin-bottom: 20px;
+        }
+        
+        .branch-city {
+            font-family: 'Inter', sans-serif;
+            font-weight: 700;
+            font-size: 16px;
+            line-height: 1.2;
+            color: #0D256F;
+            margin-bottom: 5px;
+            text-transform: uppercase;
+        }
+        
+        .branch-address {
+            font-family: 'Inter', sans-serif;
+            font-weight: 400;
+            font-size: 13px;
+            line-height: 1.3;
+            color: #202020;
+            margin-bottom: 3px;
+        }
+        
+        .branch-email {
+            font-family: 'Inter', sans-serif;
+            font-weight: 400;
+            font-size: 13px;
+            line-height: 1.3;
+            color: #0D256F;
+            margin-bottom: 2px;
+        }
+        
+        .branch-phone {
+            font-family: 'Inter', sans-serif;
+            font-weight: 400;
+            font-size: 13px;
+            line-height: 1.3;
+            color: #202020;
+            margin-bottom: 2px;
+        }
+        
+        .branch-contact {
+            font-family: 'Inter', sans-serif;
+            font-weight: 500;
+            font-size: 13px;
+            line-height: 1.3;
+            color: #202020;
+            font-style: italic;
+        }
+        
+        .branches-map {
+            flex: 1;
+            min-width: 300px;
+            max-width: 50%;
+            display: flex;
+            align-items: stretch;
+            justify-content: center;
+            overflow: hidden;
+            height: auto;
+            align-self: stretch;
+            box-sizing: border-box;
+        }
+        
+        .map-placeholder {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #666;
+            font-family: 'Inter', sans-serif;
+            font-size: 14px;
+            background: linear-gradient(45deg, #e0e0e0 25%, #f0f0f0 25%, #f0f0f0 50%, #e0e0e0 50%, #e0e0e0 75%, #f0f0f0 75%);
+            background-size: 20px 20px;
+            min-height: 250px;
+            box-sizing: border-box;
+        }
+        /* Стили для AI чат-бота */
+                /* Дополнительные стили для чат-контейнера из style.css */
+        .chat-container {
+            max-width: 500px;
+            margin: 40px auto;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            padding: 20px;
+        }
+
+        .chat-box {
+            height: 300px;
+            overflow-y: auto;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            padding: 10px;
+            margin-bottom: 10px;
+            background: #fafafa;
+        }
+
+        .message {
+            margin: 8px 0;
+        }
+
+        .user {
+            text-align: right;
+            color: #1976d2;
+        }
+
+        .llm {
+            text-align: left;
+            color: #388e3c;
+        }
+
+        #chat-form {
+            display: flex;
+        }
+
+        #user-input {
+            flex: 1;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px 0 0 4px;
+            outline: none;
+        }
+
+        #chat-form button {
+            padding: 8px 16px;
+            border: none;
+            background: #1976d2;
+            color: #fff;
+            border-radius: 0 4px 4px 0;
+            cursor: pointer;
+        }
+
+        #chat-form button:hover {
+            background: #1565c0;
+        }
+        #ai-chat-toggle {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background-color: #1a3d7c;
+            color: white;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            font-size: 24px;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        #ai-chat-toggle:hover {
+            background-color: #2a5da8;
+            transform: scale(1.05);
+        }
+
+        #ai-chat-container {
+            position: fixed;
+            bottom: 90px;
+            right: 20px;
+            width: 350px;
+            height: 450px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            display: flex;
+            flex-direction: column;
+            z-index: 1000;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            opacity: 0;
+            transform: translateY(20px);
+            pointer-events: none;
+        }
+
+        #ai-chat-container.open {
+            opacity: 1;
+            transform: translateY(0);
+            pointer-events: auto;
+        }
+
+        #ai-chat-header {
+            background-color: #1a3d7c;
+            color: white;
+            padding: 12px 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        #ai-chat-header span {
+            font-weight: bold;
+        }
+
+        #ai-chat-header button {
+            background: none;
+            border: none;
+            color: white;
+            cursor: pointer;
+            font-size: 18px;
+            margin-left: 10px;
+        }
+
+        #ai-chat-messages {
+            flex: 1;
+            padding: 15px;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .ai-message {
+            background-color: #f0f4ff;
+            padding: 10px 15px;
+            border-radius: 15px;
+            max-width: 80%;
+            align-self: flex-start;
+            position: relative;
+        }
+
+        .user-message {
+            background-color: #1a3d7c;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 15px;
+            max-width: 80%;
+            align-self: flex-end;
+            position: relative;
+        }
+
+        #ai-chat-input-container {
+            display: flex;
+            padding: 10px;
+            border-top: 1px solid #eee;
+        }
+
+        #ai-chat-input {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 20px;
+            outline: none;
+        }
+
+        #ai-chat-send {
+            background-color: #1a3d7c;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            margin-left: 10px;
+            cursor: pointer;
+        }
+
+        #ai-chat-send:hover {
+            background-color: #2a5da8;
+        }
+
+        /* Адаптивность для чата */
+        @media (max-width: 768px) {
+            #ai-chat-container {
+                width: 90%;
+                right: 5%;
+                left: 5%;
+                height: 60%;
+            }
+            
+            #ai-chat-toggle {
+                bottom: 10px;
+                right: 10px;
+            }
+        }
+        /* Адаптивность для блока филиалов */
+        @media (max-width: 768px) {
+            .branches-info,
+            .branches-map {
+                max-width: 100% !important;
+                min-width: 100% !important;
+            }
+        }
+
+        @media (max-width: 1000px) {
+            .branch-city {
+                font-size: 15px;
+            }
+            
+            .branch-content {
+                max-width: 250px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .branches-container {
+                flex-direction: column;
+            }
+            
+            .branch-item {
+                padding: 0 15px;
+                min-height: 70px;
+            }
+            
+            .branch-content {
+                max-width: 100%; /* На мобильных занимает всю ширину */
+            }
+            
+            /* Сохраняем расстояния для мобильной версии */
+            .branch-item:first-child {
+                margin-bottom: 20px;
+            }
+            
+            .branch-item:nth-child(2) {
+                margin-bottom: 20px;
+            }
+            
+            .map-placeholder {
+                min-height: 200px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .branch-city {
+                font-size: 14px;
+            }
+            
+            .branch-address, .branch-email, .branch-phone, .branch-contact {
+                font-size: 12px;
+            }
+            
+            .branch-item {
+                padding: 0 10px;
+                min-height: 60px;
+            }
+            
+            .map-placeholder {
+                min-height: 180px;
+                font-size: 13px;
+            }
+        }
+
+        @media (max-width: 1200px) {
+            .logo-text-description {
+                max-width: 95%;
+                font-size: clamp(15px, 3.5vw, 18px);
+            }
+            
+            .distributor-text {
+                font-size: 50px;
+            }
+            
+            .values-grid {
+                gap: 50px 30px;
+            }
+        }
+
+        @media (max-width: 1000px) {
+            .nav-item {
+                margin: 0 10px;
+            }
+            
+            .distributor-text {
+                font-size: 40px;
+            }
+            
+            .specialization-text {
+                font-size: 18px;
+                max-width: 700px;
+            }
+            
+            .mission-logo {
+                width: 500px;
+                height: 500px;
+            }
+            
+            .mission-text {
+                font-size: 18px;
+                max-width: 90%;
+            }
+            
+            .mission-title {
+                font-size: 28px;
+            }
+            
+            .logo-title {
+                font-size: 28px;
+            }
+            
+            .logo-description {
+                font-size: 14px;
+            }
+            
+            .logo-text-title {
+                font-size: 24px;
+            }
+            
+            .logo-text-container {
+                margin-top: -240px;
+            }
+            
+            /* Адаптация увеличенного заголовка для средних экранов */
+            .values-title {
+                font-size: 36px;
+            }
+            
+            .values-grid {
+                gap: 40px 25px;
+            }
+            
+            .value-image {
+                width: 85px;
+                height: 85px;
+                margin-bottom: 10px;
+            }
+            
+            .value-subtitle {
+                font-size: 18px;
+            }
+            
+            .value-description {
+                font-size: 15px;
+            }
+        }
+        
+        @media (max-width: 850px) {
+            .header {
+                padding: 0 20px;
+            }
+            
+            .nav-item {
+                margin: 0 8px;
+            }
+            
+            .nav-link {
+                font-size: 16px;
+            }
+            
+            .login-btn {
+                padding: 10px 25px;
+                font-size: 16px;
+            }
+            
+            .logo-img {
+                max-height: 65px;
+            }
+            
+            .nav-icon {
+                width: 16px;
+                height: 16px;
+            }
+            
+            .distributor-text {
+                font-size: 32px;
+                margin-bottom: 80px;
+            }
+            
+            .specialization-text {
+                font-size: 16px;
+                max-width: 600px;
+            }
+            
+            .mission-logo {
+                width: 420px;
+                height: 420px;
+            }
+            
+            .mission-title {
+                font-size: 24px;
+            }
+            
+            .mission-text {
+                font-size: 16px;
+            }
+            
+            .rectangle-7 {
+                padding: 80px 0;
+            }
+            
+            .logo-title {
+                font-size: 24px;
+            }
+            
+            .logo-description {
+                font-size: 13px;
+            }
+            
+            .logo-text-title {
+                font-size: 20px;
+            }
+            
+            .logo-text-description {
+                font-size: 16px;
+            }
+            
+            .logo-text-container {
+                margin-top: -200px;
+            }
+            
+            .values-title {
+                font-size: 32px;
+                margin-bottom: 60px;
+            }
+            
+            .values-grid {
+                gap: 35px 20px;
+            }
+            
+            .value-image {
+                width: 80px;
+                height: 80px;
+                margin-bottom: 18px;
+            }
+            
+            .value-subtitle {
+                font-size: 17px;
+            }
+            
+            .value-description {
+                font-size: 14px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .logo-text-description {
+                max-width: 100%;
+                font-size: clamp(14px, 3vw, 16px);
+                padding: 0 15px;
+                text-align: left;
+                text-justify: auto;
+            }
+            
+            .rectangle-2 {
+                padding: 0 5%;
+                height: 600px;
+                justify-content: flex-start;
+                padding-top: 100px;
+            }
+            
+            .distributor-text {
+                margin-bottom: 60px;
+            }
+            
+            .values-title {
+                margin-bottom: 40px;
+            }
+            
+            .values-grid {
+                grid-template-columns: 1fr; /* Одна колонка на мобильных */
+                gap: 40px;
+            }
+            
+            .values-grid .value-item:nth-child(5) {
+                grid-column: 1; /* Отменяем span для мобильных */
+                max-width: 100%;
+            }
+            
+            .value-item {
+                max-width: 400px;
+                margin: 0 auto;
+            }
+        }
+        
+        @media (max-width: 650px) {
+            .nav-menu {
+                display: none;
+            }
+            
+            .logo-img {
+                max-height: 55px;
+            }
+            
+            /* Иконка меню для мобильных */
+            .menu-toggle {
+                display: block;
+                width: 30px;
+                height: 20px;
+                position: relative;
+                cursor: pointer;
+            }
+            
+            .menu-toggle span {
+                display: block;
+                position: absolute;
+                height: 3px;
+                width: 100%;
+                background: white;
+                border-radius: 3px;
+                opacity: 1;
+                left: 0;
+                transform: rotate(0deg);
+                transition: .25s ease-in-out;
+            }
+            
+            .menu-toggle span:nth-child(1) {
+                top: 0px;
+            }
+            
+            .menu-toggle span:nth-child(2) {
+                top: 8px;
+            }
+            
+            .menu-toggle span:nth-child(3) {
+                top: 16px;
+            }
+            
+            .distributor-text {
+                font-size: 24px;
+                margin-bottom: 40px;
+            }
+            
+            .specialization-text {
+                font-size: 14px;
+                max-width: 100%;
+            }
+            
+            .mission-logo {
+                width: 350px;
+                height: 350px;
+            }
+            
+            .mission-title {
+                font-size: 20px;
+                margin-bottom: 20px;
+            }
+            
+            .mission-text {
+                font-size: 14px;
+                margin-bottom: 30px;
+                line-height: 1.4;
+            }
+            
+            .rectangle-7 {
+                padding: 60px 0;
+                min-height: 600px;
+            }
+            
+            .logo-title {
+                font-size: 20px;
+                margin-bottom: 15px;
+            }
+            
+            .logo-description {
+                font-size: 12px;
+                max-width: 90%;
+            }
+            
+            .logo-text-title {
+                font-size: 18px;
+                margin-bottom: 15px;
+            }
+            
+            .logo-text-description {
+                font-size: 14px;
+            }
+            
+            .logo-text-container {
+                margin-top: -160px;
+            }
+            
+            .values-title {
+                font-size: 28px;
+                margin-bottom: 35px;
+            }
+            
+            .values-grid {
+                gap: 35px;
+            }
+            
+            .value-subtitle {
+                font-size: 18px;
+            }
+            
+            .value-image {
+                width: 75px;
+                height: 75px;
+                margin-bottom: 15px;
+            }
+            
+            .value-description {
+                font-size: 14px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .logo-text-description {
+                font-size: clamp(13px, 2.8vw, 14px);
+                line-height: 1.6;
+                padding: 0 10px;
+            }
+            
+            .mission-logo {
+                width: 280px;
+                height: 280px;
+            }
+            
+            .mission-title {
+                font-size: 18px;
+            }
+            
+            .mission-text {
+                font-size: 13px;
+                padding: 0 10px;
+            }
+            
+            .rectangle-7 {
+                padding: 40px 0;
+                min-height: 500px;
+            }
+            
+            .distributor-text {
+                font-size: 20px;
+                margin-bottom: 30px;
+            }
+            
+            .specialization-text {
+                font-size: 12px;
+            }
+            
+            .logo-title {
+                font-size: 18px;
+            }
+            
+            .logo-description {
+                font-size: 11px;
+            }
+            
+            .logo-text-title {
+                font-size: 16px;
+            }
+            
+            .logo-text-description {
+                font-size: 12px;
+            }
+            
+            .logo-text-container {
+                margin-top: -130px;
+            }
+            
+            .rectangle-2 {
+                height: 500px;
+                padding-top: 80px;
+            }
+            
+            .values-title {
+                font-size: 24px;
+                margin-bottom: 30px;
+            }
+            
+            .values-grid {
+                gap: 30px;
+            }
+            
+            .value-subtitle {
+                font-size: 16px;
+                margin-bottom: 12px;
+            }
+            
+            .value-description {
+                font-size: 13px;
+            }
+            
+            .value-image {
+                width: 70px;
+                height: 70px;
+                margin-bottom: 12px;
+            }
+            
+            .values-grid .value-item:nth-child(5) .value-description {
+                font-size: 15px;
+            }
+        }
+                .full-width-section {
+            width: 100%;
+            background: #0D256F;
+            padding: 70px 0;
+        }
+        
+        .advantages-container {
+            max-width: 1200px;
+            width: 100%;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .advantages-title {
+            font-family: 'Inter', sans-serif;
+            font-weight: 700;
+            font-size: 42px;
+            line-height: 100%;
+            text-transform: uppercase;
+            color: #FFFFFF;
+            text-align: center;
+            width: 100%;
+            margin-bottom: 60px;
+            letter-spacing: 1.5px;
+        }
+        
+        .advantages-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px 60px;
+        }
+
+        .advantage-item {
+            display: flex;
+            align-items: flex-start;
+        }
+        
+        .advantage-number {
+            font-family: 'Inter', sans-serif;
+            font-weight: 700;
+            font-size: 24px;
+            line-height: 1;
+            color: #FFFFFF;
+            min-width: 50px;
+            margin-right: 20px;
+            flex-shrink: 0;
+            background: rgba(255, 255, 255, 0.15);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .advantage-content {
+            flex: 1;
+        }
+        
+        .advantage-subtitle {
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            font-size: 20px;
+            line-height: 1.3;
+            color: #FFFFFF;
+            margin-bottom: 0; /* Убрали отступ снизу, так как описаний нет */
+        }
+
+        .footer-container {
+            width: 100%;
+            background-color: #000;
+            color: white;
+            padding: 40px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+        }
+        
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .footer-text {
+            flex: 1;
+            min-width: 300px;
+            margin-right: 30px;
+        }
+        
+        .footer-info {
+            margin-bottom: 25px;
+        }
+        
+        .footer-info h3 {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #fff;
+        }
+        
+        .footer-info p {
+            font-size: 16px;
+            line-height: 1.6;
+            color: #ccc;
+        }
+        
+        .footer-logo {
+            width: 180px;
+            height: 180px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #000;
+            border-radius: 8px;
+            padding: 15px;
+        }
+        
+        .footer-logo img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+        
+        .copyright {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #333;
+            text-align: center;
+            color: #999;
+            font-size: 14px;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+         /* Адаптивность */
+        @media (max-width: 768px) {
+            .footer-content {
+                flex-direction: column;
+            }
+            
+            .footer-text {
+                margin-right: 0;
+                margin-bottom: 30px;
+            }
+            
+            .footer-logo {
+                align-self: center;
+            }
+        }
+
+        @media (max-width: 1000px) {
+            .advantages-title {
+                font-size: 36px;
+            }
+            
+            .advantages-grid {
+                gap: 35px 40px;
+            }
+            
+            .advantage-number {
+                font-size: 22px;
+                min-width: 45px;
+                margin-right: 15px;
+                width: 45px;
+                height: 45px;
+            }
+            
+            .advantage-subtitle {
+                font-size: 18px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .full-width-section {
+                padding: 50px 0;
+            }
+            
+            .advantages-title {
+                font-size: 32px;
+                margin-bottom: 40px;
+            }
+            
+            .advantages-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            
+            .advantage-item {
+                max-width: 500px;
+                margin: 0 auto;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .full-width-section {
+                padding: 40px 0;
+            }
+            
+            .advantages-title {
+                font-size: 28px;
+                margin-bottom: 30px;
+            }
+            
+            .advantage-number {
+                font-size: 20px;
+                min-width: 40px;
+                margin-right: 12px;
+                width: 40px;
+                height: 40px;
+            }
+            
+            .advantage-subtitle {
+                font-size: 16px;
+            }
+        }
