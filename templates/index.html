@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Шапка сайта с логотипом</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <!-- SVG спрайт с иконками -->
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+        <symbol id="home-icon" viewBox="0 0 24 24">
+            <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
+        </symbol>
+    
+        <symbol id="services-icon" viewBox="0 0 24 24">
+            <path d="M19.14 12.94c.04-.3.06-.61.06-.94 0-.32-.02-.64-.07-.94l2.03-1.58c.18-.14.23-.41.12-.61l-1.92-3.32c-.12-.22-.37-.29-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94l-.36-2.54c-.04-.24-.24-.41-.48-.41h-3.84c-.24 0-.43.17-.47.41l-.36 2.54c-.59.24-1.13.57-1.62.94l-2.39-.96c-.22-.08-.47 0-.59.22L2.74 8.87c-.12.21-.08.47.12.61l2.03 1.58c-.05.3-.09.63-.09.94s.02.64.07.94l-2.03 1.58c-.18.14-.23.41-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .44-.17.47-.41l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32c.12-.22.07-.47-.12-.61l-2.01-1.58zM12 15.6c-1.98 0-3.6-1.62-3.6-3.6s1.62-3.6 3.6-3.6 3.6 1.62 3.6 3.6-1.62 3.6-3.6 3.6z"/>
+        </symbol>
+    
+        <symbol id="about-icon" viewBox="0 0 24 24">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/>
+        </symbol>
+    
+        <symbol id="portfolio-icon" viewBox="0 0 24 24">
+            <path d="M20 6h-4V4c0-1.11-.89-2-2-2h-4c-1.11 0-2 .89-2 2v2v2H4c-1.11 0-1.99.89-1.99 2L2 19c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2zm-6 0h-4V4h4v2z"/>
+        </symbol>
+    
+        <symbol id="contacts-icon" viewBox="0 0 24 24">
+            <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 14H4V8l8 5 8-5v10zm-8-7L4 6h16l-8 5z"/>
+        </symbol>
+    
+        <symbol id="login-icon" viewBox="0 0 24 24">
+            <path d="M10.09 15.59L11.5 17l5-5-5-5-1.41 1.41L12.67 11H3v2h9.67l-2.58 2.59zM19 3H5c-1.11 0-2 .9-2 2v4h2V5h14v14H5v-4H3v4c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"/>
+        </symbol>
+    </svg>
+
+    <header class="header">
+        <div class="logo-container">
+            <a href="/" class="logo-link">
+                <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Логотип компании" class="logo-img" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTgwIiBoZWlnaHQ9IjUwIiB2aWV3Qm94PSIwIDAgMTgwIDUwIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxyZWN0IHdpZHRoPSIxODAiIGhlaWdodD0iNTAiIGZpbGw9IiMwRDI1NkYiLz48dGV4dCB4PSI1MCUiIHk9IjUwJSIgZG9taW5hbnQtYmFzZWxpbmU9Im1pZGRsZSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0iI0ZGRiIgZm9udC1zaXplPSIxOCIgZm9udC1mYW1pbHk9IkFyaWFsLCBzYW5zLXNlcmlmIj5Mb2dvPC90ZXh0Pjwvc3ZnPg=='">
+            </a>
+        </div>
+        
+        <ul class="nav-menu">
+            <li class="nav-item">
+                <a href="#" class="nav-link">
+                    Главная
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">
+                    Продукция
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">
+                    Филиалы
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">
+                </a>
+            </li>
+        </ul>
+        
+        <!-- ИЗМЕНЕНИЕ 1: Текст кнопки изменен на номер телефона -->
+        <button class="login-btn">
+            <svg class="btn-icon">
+                <use xlink:href="#login-icon"></use>
+            </svg>
+            +7 (495) 123-45-67
+        </button>
+        
+        <div class="menu-toggle" style="display: none;">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </header>
+    
+    <div class="rectangle-2">
+        <div class="distributor-text">
+            <span class="official-part">Официальный </span>
+            <span class="distributor-part">дистрибьютор<br>смазочных материалов</span>
+        </div>
+        <div></div>
+            <span class="specialization-part1">Специализируемся на оптовой торговле смазочными материалами</span>
+            <span class="specialization-part2">на территории России с 2017 года</span>
+        </div>
+    </div>
+    
+    <div class="rectangle-7">
+        <div class="mission-content">
+            <div class="mission-logo">
+                <img src="{{ url_for('static', filename='images/LogoMissiy.png') }}" alt="Миссия компании" onerror="this.style.display='none'">
+                <div class="logo-text-overlay">
+                    <div class="logo-title">наша миссия</div>
+                    <div class="logo-text-description">
+                        Как официальный дистрибьютор ведущих мировых производителей
+                        смазочных материалов,<br> мы предлагаем не просто поставки, а комплексные решения для вашего производства.<br>
+                        Наша цель — стать Вашим стратегическим партнером в повышении<br>
+                        эффективности и снижении операционных затрат
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Новый блок "Наши ценности" -->
+    <section class="values-section">
+        <div class="values-container">
+            <!-- ИЗМЕНЕНИЕ 2: Заголовок размещен по центру и увеличен на 10px -->
+            <h2 class="values-title">НАШИ ЦЕННОСТИ</h2>
+            
+            <!-- ИЗМЕНЕНИЕ 3: Элементы ценностей размещены согласно макету в сетке 2x3 -->
+            <div class="values-grid">
+                <div class="value-item">
+                    <img src="{{ url_for('static', filename='images/Warranty.png') }}" alt="Иконка ценности" class="value-image">
+                    <div class="value-content">
+                        <!-- ИЗМЕНЕНИЕ 4: Добавлено расстояние 5px между блоками -->
+                        <h3 class="value-subtitle">Качество продукции и обслуживания</h3>
+                        <p class="value-description">Наш сервис — это четкие сроки, персональный менеджер и решение вопросов в один клик</p>
+                    </div>
+                </div>
+                
+                <div class="value-item">
+                    <img src="{{ url_for('static', filename='images/Innovation.png') }}" alt="Иконка инноваций" class="value-image">
+                    <div class="value-content">
+                        <h3 class="value-subtitle">Инновационный подход</h3>
+                        <p class="value-description">Мы предлагаем современные решения, которые повышают эффективность и снижают затраты</p>
+                    </div>
+                </div>
+                
+                <div class="value-item">
+                    <img src="{{ url_for('static', filename='images/Reliability.png') }}" alt="Иконка надежности" class="value-image">
+                    <div class="value-content">
+                        <h3 class="value-subtitle">Надежность</h3>
+                        <p class="value-description">На нас можно положиться — мы несем ответственность за каждый этап сотрудничества</p>
+                    </div>
+                </div>
+                
+                <div class="value-item">
+                    <img src="{{ url_for('static', filename='images/Competence.png') }}" alt="Иконка компетентности" class="value-image">
+                    <div class="value-content">
+                        <h3 class="value-subtitle">Компетентность персонала</h3>
+                        <p class="value-description">Наша экспертиза позволяет точно подобрать продукт под ваши задачи и предотвратить простой</p>
+                    </div>
+                </div>
+                
+                <div class="value-item">
+                    <img src="{{ url_for('static', filename='images/Client.png') }}" alt="Иконка клиентоориентированности" class="value-image">
+                    <div class="value-content">
+                        <h3 class="value-subtitle">Клиентоориентированность</h3>
+                        <p class="value-description">Мы выстраиваем долгосрочные отношения, основанные на взаимном доверии и понимании потребностей</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Блок "Наши преимущества" с синим фоном на всю ширину -->
+    <section class="full-width-section">
+        <div class="advantages-container">
+            <h2 class="advantages-title">НАШИ ПРИЕМУЩЕСТВА</h2>
+            
+            <div class="advantages-grid">
+                <div class="advantage-item">
+                    <div class="advantage-number">01</div>
+                    <div class="advantage-content">
+                        <h3 class="advantage-subtitle">Надежность поставщика с многолетним опытом</h3>
+                    </div>
+                </div>
+                
+                <div class="advantage-item">
+                    <div class="advantage-number">02</div>
+                    <div class="advantage-content">
+                        <h3 class="advantage-subtitle">Высокое качество продукции и соблюдение стандартов</h3>
+                    </div>
+                </div>
+                
+                <div class="advantage-item">
+                    <div class="advantage-number">03</div>
+                    <div class="advantage-content">
+                        <h3 class="advantage-subtitle">Постоянное обновление ассортимента в соответствии с рынком</h3>
+                    </div>
+                </div>
+                
+                <div class="advantage-item">
+                    <div class="advantage-number">04</div>
+                    <div class="advantage-content">
+                        <h3 class="advantage-subtitle">Поддержка клиентов на всех этапах сотрудничества</h3>
+                    </div>
+                </div>
+                
+                <div class="advantage-item">
+                    <div class="advantage-number">05</div>
+                    <div class="advantage-content">
+                        <h3 class="advantage-subtitle">Широкий ассортимент продукции, гибкая система скидок</h3>
+                    </div>
+                </div>
+                
+                <div class="advantage-item">
+                    <div class="advantage-number">06</div>
+                    <div class="advantage-content">
+                        <h3 class="advantage-subtitle">Индивидуальный подход к каждому клиенту</h3>
+                    </div>
+                </div>
+                
+                <div class="advantage-item">
+                    <div class="advantage-number">07</div>
+                    <div class="advantage-content">
+                        <h3 class="advantage-subtitle">Консультации специалистов по выбору продукции, лабораторные анализы</h3>
+                    </div>
+                </div>
+                
+                <div class="advantage-item">
+                    <div class="advantage-number">08</div>
+                    <div class="advantage-content">
+                        <h3 class="advantage-subtitle">Быстрая доставка по регионам</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>     
+    <!-- Блок "Филиалы" -->
+    <section class="branches-section">
+        <div class="branches-container">
+            <div class="branches-info">
+                <div class="branch-item">
+                    <div class="branch-content">
+                        <h3 class="branch-city">Г. ЕКАТЕРИНБУРГ</h3>
+                        <p class="branch-email">Эл. Почта: Dvizanie-Ural@Yandex.Ru</p>
+                        <p class="branch-phone">Тел.: +7 (922) 157-37-44</p>
+                        <p class="branch-contact">Андрей Надточий</p>
+                    </div>
+                </div>
+                
+                <div class="branch-item">
+                    <div class="branch-content">
+                        <h3 class="branch-city">Г. ЧЕЛЯБИНСК</h3>
+                        <p class="branch-address">Передовой Переулок, 7, НП 9, Каб. 5</p>
+                        <p class="branch-email">Эл. Почта: ooochizenie74@Mail.Ru</p>
+                        <p class="branch-phone">Тел.: +7 (922) 766-07-67</p>
+                        <p class="branch-contact">Дамир Лукманов</p>
+                    </div>
+                </div>
+                
+                <div class="branch-item">
+                    <div class="branch-content">
+                        <h3 class="branch-city">ХМАО-ЮГРА</h3>
+                        <p class="branch-address">Г. Нижневартовск, Ул 9П, Стр. 10</p>
+                        <p class="branch-email">Эл. Почта: Dv219405@Mail.Ru</p>
+                        <p class="branch-phone">Тел.: +7 (902) 851-13-05</p>
+                        <p class="branch-contact">Вадим Хаммадеев</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="branches-map">
+                <div class="map-placeholder">
+                    <!-- Область для вставки файла map.png -->
+                    <img src="{{ url_for('static', filename='images/map.png') }}" alt="Карта филиалов компании" style="width: 100%; height: 100%; object-fit: cover;" onerror="this.parentNode.innerHTML='Область для карты филиалов (map.png)'">
+                </div>
+            </div>
+        </div>  
+    </section>
+    <div class="footer-container">
+        <div class="footer-content">
+            <div class="footer-text">
+                <div class="footer-info">
+                    <h3>Телефон</h3>
+                    <p>+7 (495) 123-45-67 | Email: info@dvijente.ru</p>
+                </div>
+                
+                <div class="footer-info">
+                    <h3>Режим работы</h3>
+                    <p>Понедельник - Пятница: 9:00 - 18:00 (по Московскому времени)</p>
+                </div>
+                
+                <div class="footer-info">
+                    <h3>Адрес</h3>
+                    <p>г. Москва, ул. Промышленная, д. 1, офис 101</p>
+                </div>
+            </div>
+            
+            <div class="footer-logo">
+                <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Логотип компании" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTgwIiBoZWlnaHQ9IjE4MCIgdmlld0JveD0iMCAwIDE4MCAxODAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHJlY3Qgd2lkdGg9IjE4MCIgaGVpZ2h0PSIxODAiIGZpbGw9IiMzMzMiLz48dGV4dCB4PSI1MCUiIHk9IjUwJSIgZG9taW5hbnQtYmFzZWxpbmU9Im1pZGRsZSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0iI0ZGRiIgZm9udC1zaXplPSIxNiIgZm9udC1mYW1pbHk9IkFyaWFsLCBzYW5zLXNlcmlmIj5Mb2dvPC90ZXh0Pjwvc3ZnPg=='">
+            </div>
+        </div>
+        
+        <div class="copyright">
+            <p>© 2023 ООО "Движение". Все права защищены.</p>
+        </div>
+    </div>
+    <!-- Чат-бот AI ассистент -->
+     <div id="ai-chat-container">
+        <div id="ai-chat-header">
+            <span>AI-помощник</span>
+            <button id="ai-chat-minimize">−</button>
+            <button id="ai-chat-close">×</button>
+        </div>
+        <div id="ai-chat-messages"></div>
+        <form id="ai-chat-form">
+            <div id="ai-chat-input-container">
+                <input type="text" id="ai-chat-input" placeholder="Задайте ваш вопрос...">
+                <button type="submit" id="ai-chat-send">➤</button>
+            </div>
+        </form>
+    </div>
+    <button id="ai-chat-toggle">💬</button>
+    <script src="{{ url_for('static', filename='script.js') }}" defer></script>
+</body>
+</html>
